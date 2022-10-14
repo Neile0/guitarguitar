@@ -1,46 +1,40 @@
 <template>
     <div>
-        <h1>Choose your Guitar</h1>
-        <ul style="">
-            <li @click="change('youtube')">Youtube</li>
-            <li @click="change('spotify')">Spotify</li>
-        </ul>
-        <div v-show="youtubeSelected">
-            <YouTube/>
+        <div id="guitarImg" style="float:left;text-align:left;border:1px solid grey;width:400px;height:600px;">
+            <img width=400 height=600 src="https://upload.wikimedia.org/wikipedia/commons/6/63/Fender_Stratocaster_004-2.jpg"/>
         </div>
-        <div v-show="spotifySelected">7
-            <Spotify :uri="myVar"/>
+        <div id="guitarInfo">
+            <p>Make:{{make}}</p>
+            <p>Model: {{model}}</p>
+            <p>Guitarists: {{guitarists}} </p>
         </div>
-        <div>
+        <div id="social">
             
-            <button @click="changemyVar()">Like</button>
-            <button>&#62;</button>
+            <Spotify :uri="myVar"/>
+            <YouTube/>
         </div>
     </div>
 </template>
   
   <script>
-  import YouTube from './YouTube.vue'
   import Spotify from './Spotify.vue'
-  import axios from 'axios'
+  import YouTube from './YouTube.vue'
   export default {
-    name: 'VideoScreen',
+    name: 'ResultsScreen',
     components: {
-        YouTube,
-        Spotify
+      Spotify,
+      YouTube
     },
     props: {
       msg: String
     },
     data () {
         return {
-            youtubeSelected: true,
-            spotifySelected:false,
-            myVar:"https://open.spotify.com/embed/track/4vsoWZcvtvSsE0OiVvDDvX?si=e0c9477964664276"
+            make: "Fender",
+            model: "Stratocaster",
+            guitarists: "Eric Clapton",
+            myVar: "https://open.spotify.com/embed/track/4vsoWZcvtvSsE0OiVvDDvX?si=e0c947796466427"
         }
-    },
-    mounted () {
-        axios.get("https://api.github.com/users/mapbox").then((response) => console.log(response))
     },
     methods: {
         go() {
