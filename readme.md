@@ -8,4 +8,7 @@ npm install -g @vue/cli
 
 cd guitarguitar
 
+npm install
+
 npm run serve
+
