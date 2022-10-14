@@ -1,26 +1,28 @@
 <template>
   <div id="app">
-    <VideoScreen/>
+    <router-view />
   </div>
 </template>
 
 <script>
-import VideoScreen from './components/VideoScreen.vue'
+//import ResultsScreen from './components/ResultsScreen.vue'
 export default {
   name: 'App',
   components: {
-    VideoScreen
+  
   }
 }
 </script>
 
 <style>
 #app {
+
+  height:100%;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 0px;
 }
 </style>
