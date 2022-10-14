@@ -1,0 +1,19 @@
+# List of all Youtube urls
+# List of all SpotifyIDs
+
+# 1 Mappings
+# 1.1 Youtube -> Guitars
+# 1.2 SpotifyIDs ->
+
+
+
+
+
+# Get Youtube URL or SpotifyID
+# Get Guitar ID
+
+# From a guitar ID -> list of all guitarID where body shape match
+# From a guitart ID -> list of all guitarID where pickup match
+# From a guitar ID -> list all guitarID where brand match
+
+#
