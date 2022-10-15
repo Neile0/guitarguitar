@@ -10,7 +10,6 @@ def get_guitars_with_songs():
     data = requests.get(guitarsWithSongsUrl)
     return data.json()
 
-
 def get_guitars():
     data = requests.get(guitarsUrl)
     return data.json()
