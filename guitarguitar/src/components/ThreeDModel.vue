@@ -1,6 +1,6 @@
 <template>
     <div class="hello">
-      <model-viewer v-if="isMounted" src="/models/guitar150929289678002.glb" camera-controls></model-viewer>
+        <model-viewer v-if="isMounted" src="/guitarThreeD.glb" camera-controls></model-viewer>
     </div>
   </template>
   
@@ -10,9 +10,8 @@
     props: {
       uri: String
     },
-    data () {
-      return {
-        src: "@/assets/guitar150929289678002.glb",
+    data (){
+      return{
         isMounted: false
       }
     },
@@ -21,10 +20,10 @@
       this.loadComponent()
     },
     computed: {
-    loadComponent() {
-      return () => import('@google/model-viewer');
-    }
-  },
+      loadComponent() {
+        return () => import('@google/model-viewer');
+      }
+    },
   }
   </script>
   
