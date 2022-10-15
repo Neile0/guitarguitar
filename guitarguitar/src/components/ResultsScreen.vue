@@ -1,27 +1,163 @@
 <template>
     <div>
-        <div>
-            <div v-if="!gotGuitars" id="loading">
-  <img id="loading-image" src="https://www.surreycomet.co.uk/resources/images/10135528.jpg?type=responsive-gallery-fullscreen" alt="Loading..." />
-</div>
-        
-            <div id="guitarImg" style="float:left;text-align:left;border:1px solid grey;width:400px;height:600px;">
-                <img width=400 height=600 :src="currentInfo.pictureMain" />
+        <div class='wrapper'>
+        <div class='carousel'>
+            <div class='carousel__item'>
+                <div class='carousel__item-body'>
+                    <div id="guitarImg" style="float:left;text-align:left;border:1px solid grey;width:100px;height:200;">
+                        <img width=100 height=200 src="https://upload.wikimedia.org/wikipedia/commons/6/63/Fender_Stratocaster_004-2.jpg"/>
+                        <ThreeDModel/>
+                      </div>
+                    <div id="guitarInfo">
+                        <p class='title'>Make:{{make}}</p>
+                        <p>Model: {{model}}</p>
+                        <p>Guitarists: {{guitarists}} </p>
+                    </div>
+                    <div>
+                        <a href = "https://open.spotify.com/embed/track/4vsoWZcvtvSsE0OiVvDDvX?si=e0c947796466427" target = "_self">
+                            <img  src= "/assets/spotify.png" alt="spotify">
+                        </a>
+                    </div>
+                    
+                </div>
             </div>
-            <div style="color:white;" id="guitarInfo">
-                <p>Make:{{currentInfo.brandName}}</p>
-                <p>Model: {{currentInfo.itemName}}</p>
-               
+            <div class='carousel__item'>
+                <div class='carousel__item-body'>
+                    <div id="guitarImg" style="float:left;text-align:left;border:1px solid grey;width:100px;height:200;">
+                        <img width=100 height=200 src="https://upload.wikimedia.org/wikipedia/commons/6/63/Fender_Stratocaster_004-2.jpg"/>
+                    </div>
+                    <div id="guitarInfo">
+                        <p class='title'>Make:{{make}}</p>
+                        <p>Model: {{model}}</p>
+                        <p>Guitarists: {{guitarists}} </p>
+                    </div>
+                    <div>
+                        <a href=currentMedia.spotify>
+                            <img  src="require('@/assets/spotify.png')" alt="spotify" width="100" height="100">
+                        </a>
+                    </div>
+                </div>
             </div>
-            <iframe src="http://localhost:5500/model/index.html"></iframe>
-
-<ThreeDModel/>
-
-            <div id="social">
-              <button @click="goHome()" >Start again</button>
+            <div class='carousel__item'>
+                <div class='carousel__item-body'>
+                    <div id="guitarImg" style="float:left;text-align:left;border:1px solid grey;width:100px;height:200px;">
+                        <img width=100 height=200 src="https://upload.wikimedia.org/wikipedia/commons/6/63/Fender_Stratocaster_004-2.jpg"/>
+                    </div>
+                    <div id="guitarInfo">
+                        <p class='title'>Make:{{make}}</p>
+                        <p>Model: {{model}}</p>
+                        <p>Guitarists: {{guitarists}} </p>
+                    </div>
+                    <div>
+                        <a href=currentMedia.spotify>
+                            <img  src="require('@/assets/spotify.png')" alt="spotify" width="100" height="100">
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
+            <div class='carousel__item'>
+                <div class='carousel__item-body'>
+                    <div id="guitarImg" style="float:left;text-align:left;border:1px solid grey;width:100px;height:200px;">
+                        <img width=100 height=200 src="https://upload.wikimedia.org/wikipedia/commons/6/63/Fender_Stratocaster_004-2.jpg"/>
+                    </div>
+                    <div id="guitarInfo">
+                        <p class='title'>Make:{{make}}</p>
+                        <p>Model: {{model}}</p>
+                        <p>Guitarists: {{guitarists}} </p>
+                    </div>
+                    <div>
+                        <a href = "https://open.spotify.com/embed/track/4vsoWZcvtvSsE0OiVvDDvX?si=e0c947796466427" target = "_self">
+                            <img  src= "/assets/spotify.png" alt="spotify">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class='carousel__item'>
+                <div class='carousel__item-body'>
+                    <div id="guitarImg" style="float:left;text-align:left;border:1px solid grey;width:100px;height:200px;">
+                        <img width=100 height=200 src="https://upload.wikimedia.org/wikipedia/commons/6/63/Fender_Stratocaster_004-2.jpg"/>
+                    </div>
+                    <div id="guitarInfo">
+                        <p class='title'>Make:{{make}}</p>
+                        <p>Model: {{model}}</p>
+                        <p>Guitarists: {{guitarists}} </p>
+                    </div>
+                    <div>
+                        <a href = "https://open.spotify.com/embed/track/4vsoWZcvtvSsE0OiVvDDvX?si=e0c947796466427" target = "_self">
+                            <img  src= "/assets/spotify.png" alt="spotify">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class='carousel__item'>
+                <div class='carousel__item-body'>
+                    <div id="guitarImg" style="float:left;text-align:left;border:1px solid grey;width:100px;height:200px;">
+                        <img width=100 height=200 src="https://upload.wikimedia.org/wikipedia/commons/6/63/Fender_Stratocaster_004-2.jpg"/>
+                    </div>
+                    <div id="guitarInfo">
+                        <p class='title'>Make:{{make}}</p>
+                        <p>Model: {{model}}</p>
+                        <p>Guitarists: {{guitarists}} </p>
+                    </div>
+                    <div>
+                        <a href = "https://open.spotify.com/embed/track/4vsoWZcvtvSsE0OiVvDDvX?si=e0c947796466427" target = "_self">
+                            <img  src= "/assets/spotify.png" alt="spotify">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class='carousel__item'>
+                <div class='carousel__item-body'>
+                    <div id="guitarImg" style="float:left;text-align:left;border:1px solid grey;width:100px;height:200px;">
+                        <img width=100 height=200 src="https://upload.wikimedia.org/wikipedia/commons/6/63/Fender_Stratocaster_004-2.jpg"/>
+                    </div>
+                    <div id="guitarInfo">
+                        <p class='title'>Make:{{make}}</p>
+                        <p>Model: {{model}}</p>
+                        <p>Guitarists: {{guitarists}} </p>
+                    </div>
+                    <div>
+                        <a href = "https://open.spotify.com/embed/track/4vsoWZcvtvSsE0OiVvDDvX?si=e0c947796466427" target = "_self">
+                            <img  src= "/assets/spotify.png" alt="spotify">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class='carousel__item'>
+                <div class='carousel__item-body'>
+                    <div id="guitarImg" style="float:left;text-align:left;border:1px solid grey;width:100px;height:200px;">
+                        <img width=100 height=200 src="https://upload.wikimedia.org/wikipedia/commons/6/63/Fender_Stratocaster_004-2.jpg"/>
+                    </div>
+                    <div id="guitarInfo">
+                        <p class='title'>Make:{{make}}</p>
+                        <p>Model: {{model}}</p>
+                        <p>Guitarists: {{guitarists}} </p>
+                    </div>
+                    <div>
+                        <a href = "https://open.spotify.com/embed/track/4vsoWZcvtvSsE0OiVvDDvX?si=e0c947796466427" target = "_self">
+                            <img  src= "/assets/spotify.png" alt="spotify">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class='carousel__item'>
+                <div class='carousel__item-body'>
+                    <div id="guitarImg" style="float:left;text-align:left;border:1px solid grey;width:100px;height:200px;">
+                        <img width=100 height=200 src="https://upload.wikimedia.org/wikipedia/commons/6/63/Fender_Stratocaster_004-2.jpg"/>
+                    </div>
+                    <div id="guitarInfo">
+                        <p class='title'>Make:{{make}}</p>
+                        <p>Model: {{model}}</p>
+                        <p>Guitarists: {{guitarists}} </p>
+                    </div>
+                        <a href = "https://open.spotify.com/embed/track/4vsoWZcvtvSsE0OiVvDDvX?si=e0c947796466427" target = "_self">
+                            <img  src= "/assets/spotify.png" alt="spotify">
+                        </a>
+                </div>
+            </div>
     </div>
+    </div>
+</div>
 </template>
   
   <script>
@@ -49,6 +185,7 @@
         axios.post("http://localhost:8000/api/media/",this.data)
         .then((response) => {
             this.info = response.data
+            console.log(this.info)
             this.currentInfo = this.info[0]
             this.gotGuitars = true
         })
@@ -97,19 +234,164 @@
   h3 {
     margin: 40px 0 0;
   }
-  ul {
-    list-style-type: none;
-    padding: 0;
+  
+  .carousel__item {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    padding: 0 12px;
+    opacity: 0;
+    filter: drop-shadow(0 2px 2px #555);
+    will-change: transform, opacity;
+    -webkit-animation: carousel-animate-vertical 27s linear infinite;
+            animation: carousel-animate-vertical 27s linear infinite;
   }
-  li {
-    display: inline-block;
-    margin: 0 10px;
+  
+  .carousel__item:nth-child(1) {
+    -webkit-animation-delay: calc(3s * -1);
+            animation-delay: calc(3s * -1);
   }
-  a {
-    color: #42b983;
+  
+  .carousel__item:nth-child(2) {
+    -webkit-animation-delay: calc(3s * 0);
+            animation-delay: calc(3s * 0);
   }
-  p{
-    
+  
+  .carousel__item:nth-child(3) {
+    -webkit-animation-delay: calc(3s * 1);
+            animation-delay: calc(3s * 1);
   }
-  </style>
+  
+  .carousel__item:nth-child(4) {
+    -webkit-animation-delay: calc(3s * 2);
+            animation-delay: calc(3s * 2);
+  }
+  
+  .carousel__item:nth-child(5) {
+    -webkit-animation-delay: calc(3s * 3);
+            animation-delay: calc(3s * 3);
+  }
+  
+  .carousel__item:nth-child(6) {
+    -webkit-animation-delay: calc(3s * 4);
+            animation-delay: calc(3s * 4);
+  }
+  
+  .carousel__item:nth-child(7) {
+    -webkit-animation-delay: calc(3s * 5);
+            animation-delay: calc(3s * 5);
+  }
+  
+  .carousel__item:nth-child(8) {
+    -webkit-animation-delay: calc(3s * 6);
+            animation-delay: calc(3s * 6);
+  }
+  
+  .carousel__item:last-child {
+    -webkit-animation-delay: calc(-3s * 2);
+            animation-delay: calc(-3s * 2);
+  }
+  
+  .carousel__item-head {
+    border-radius: 50%;
+    background-color: #d7f7fc;
+    width: 90px;
+    height: 90px;
+    padding: 14px;
+    position: relative;
+    margin-right: -45px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+  }
+  
+  .carousel__item-body {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 16px 20px 16px 70px;
+    box-sizing: 900px;
+  }
+  
+  .title {
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  
+  @-webkit-keyframes carousel-animate-vertical {
+    0% {
+      transform: translateY(100%) scale(0.5);
+      opacity: 0;
+      visibility: hidden;
+    }
+    3%, 11.1111111111% {
+      transform: translateY(100%) scale(0.7);
+      opacity: 0.4;
+      visibility: visible;
+    }
+    14.1111111111%, 22.2222222222% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+      visibility: visible;
+    }
+    25.2222222222%, 33.3333333333% {
+      transform: translateY(-100%) scale(0.7);
+      opacity: 0.4;
+      visibility: visible;
+    }
+    36.3333333333% {
+      transform: translateY(-100%) scale(0.5);
+      opacity: 0;
+      visibility: visible;
+    }
+    100% {
+      transform: translateY(-100%) scale(0.5);
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  
+  @keyframes carousel-animate-vertical {
+    0% {
+      transform: translateY(100%) scale(0.5);
+      opacity: 0;
+      visibility: hidden;
+    }
+    3%, 11.1111111111% {
+      transform: translateY(100%) scale(0.7);
+      opacity: 0.4;
+      visibility: visible;
+    }
+    14.1111111111%, 22.2222222222% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+      visibility: visible;
+    }
+    25.2222222222%, 33.3333333333% {
+      transform: translateY(-100%) scale(0.7);
+      opacity: 0.4;
+      visibility: visible;
+    }
+    36.3333333333% {
+      transform: translateY(-100%) scale(0.5);
+      opacity: 0;
+      visibility: visible;
+    }
+    100% {
+      transform: translateY(-100%) scale(0.5);
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+</style>
+
+
+/** <div id="social">
+    <Spotify :uri="currentMedia.spotify"/>
+    <YouTube :uri="currentMedia.youtube"/>
+</div> */
   
