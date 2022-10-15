@@ -49,6 +49,7 @@
         axios.post("http://localhost:8000/api/media/",this.data)
         .then((response) => {
             this.info = response.data
+            console.log(this.info)
             this.currentInfo = this.info[0]
             this.gotGuitars = true
         })
@@ -107,9 +108,6 @@
   }
   a {
     color: #42b983;
-  }
-  p{
-    
   }
   </style>
   
