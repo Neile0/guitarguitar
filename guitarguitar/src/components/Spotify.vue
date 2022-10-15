@@ -6,7 +6,7 @@
   
   <script>
   export default {
-    name: 'YouTube',
+    name: 'SpotifyT',
     props: {
       uri: String
     }

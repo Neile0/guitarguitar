@@ -1,68 +1,39 @@
 <template> 
     <div>
         <h1>What Do You Like</h1>
-        <div id="rectangle1">
+        <div @click="go('shape')" id="rectangle1">
           <!--<a target="_blank" href="guitar.png">-->
             <img :src="require('@/assets/guitar.png')" alt="guitar" width="200" height="400">
           <!--</a>-->
         </div>
-        <div id="rectangle2">
+        <div @click="go('shape')" id="rectangle2">
           <img :src="require('@/assets/guitar.png')" alt="guitar" width="200" height="400">
         </div>
-        <div id="rectangle3"></div>
-        <!---
-        <div v-show="youtubeSelected">
-            <YouTube/>
-        </div>
-        <div v-show="spotifySelected">7
-            <Spotify :uri="myVar"/>
-        </div>
-        <div>
-        <button @click="changemyVar()">Like</button>
-        </div>
-        -->
+        <div @click="go('shape')" id="rectangle3"></div>
+        
     </div>
 </template>
-  <!--
   <script>
-  import YouTube from './YouTube.vue'
-import Spotify from './Spotify.vue'
   export default {
     name: 'WhatDoYouLike',
     components: {
-        YouTube,
-        Spotify
+        
     },
-    props: {
-      msg: String
-    },
+    props: ['media'],
     data () {
         return {
-            youtubeSelected: true,
-            spotifySelected:false,
-            myVar:"https://open.spotify.com/embed/track/4vsoWZcvtvSsE0OiVvDDvX?si=e0c9477964664276"
         }
     },
+    mounted () {
+      console.log(this.$route.params)
+    },
     methods: {
-        go() {
-            this.$router.push()
+        go(t) {
+            this.$router.push({name:'resultsscreen',params:{"type":t,"media":this.media}})
         },
-        changemyVar() {
-            this.myVar ="https://open.spotify.com/embed/track/1Ud6moTC0KyXMq1Oxfien0?si=c565fd4210664132"
-        },
-        change(string) {
-            if ( string == "youtube" ) {
-                this.youtubeSelected = true
-                this.spotifySelected = false
-            } else {
-                this.youtubeSelected = false
-                this.spotifySelected = true 
-            }
-        }
     }
   }
   </script>
-  -->
   
   <!-- Add "scoped" attribute to limit CSS to this component only -->
   <style scoped>

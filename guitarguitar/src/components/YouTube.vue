@@ -1,7 +1,7 @@
 <template>
     <div class="hello">
         <iframe width="420" height="315"
-        src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&controls=0&mute=0">
+        :src="uri">
         </iframe>
     </div>
   </template>
@@ -10,7 +10,7 @@
   export default {
     name: 'YouTube',
     props: {
-      msg: String
+      uri: String
     }
   }
   </script>
