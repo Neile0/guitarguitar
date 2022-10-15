@@ -1,14 +1,14 @@
 <template>
     <div>
-        <p>Choose your Guitar</p>
-        <ul style="">
-            <li @click="change('youtube')">Youtube</li>
-            <li @click="change('spotify')">Spotify</li>
+        <h1 style="color:white;">Choose your Guitar</h1>
+        <ul style="color:white;">
+            <button @click="change('youtube')">Youtube</button>
+            <button @click="change('spotify')">Spotify</button>
         </ul>
-        <div v-show="youtubeSelected">
+        <div v-if="youtubeSelected">
             <YouTube :uri="currentMedia.youtube"/>
         </div>
-        <div v-show="spotifySelected">7
+        <div v-if="spotifySelected">7
             <Spotify :uri="currentMedia.spotify"/>
         </div>
         <div>
@@ -57,12 +57,14 @@
                     this.currentMedia = this.media[this.i]
                 } else {
                     this.currentMedia = this.media[0]
+                    this.i=0
                 }
                 
             } else {
                 this.i -= 1
                 if ( this.i < 0) {
                     this.currentMedia = this.media[this.media.length-1]
+                    this.i = this.media.length
                 } else {
                     this.currentMedia = this.media[this.i]
                 }
@@ -71,7 +73,7 @@
             
         },
         go() {
-            this.$router.push({name:'whatdoyoulike',params: {media:this.media}})
+            this.$router.push({name:'whatdoyoulike',params: {media:this.currentMedia}})
         },
         changemyVar() {
             this.myVar ="https://open.spotify.com/embed/track/1Ud6moTC0KyXMq1Oxfien0?si=c565fd4210664132"
@@ -81,6 +83,7 @@
                 this.youtubeSelected = true
                 this.spotifySelected = false
             } else {
+                
                 this.youtubeSelected = false
                 this.spotifySelected = true 
             }

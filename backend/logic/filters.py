@@ -38,10 +38,9 @@ def get_guitar_recommendations(filterBy, media):
     guitarID = get_guitar_from_spotify_id(spotifyID)
     filters = {
         'shape':'bodyShape',
+        'sound':'pickup',
+        'brand':'brandName',
     }
     print(f"GuitarID: {guitarID} FilterBy: {filters[filterBy]}")
     guitars = get_guitars_with_matching(guitarID, filters[filterBy])
     return guitars
-
-if __name__ == "__main__":
-    print(get_guitars_with_matching(aGuitarId, 'bodyShape'))
