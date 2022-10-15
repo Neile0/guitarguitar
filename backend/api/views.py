@@ -20,7 +20,6 @@ def guitars_with_songs(request):
     
 @api_view(['GET','POST'])
 def youtube_spotify_pairs(request):
-    print("media")
     if request.method == "GET":
         response = data_retrieval.get_youtube_spotify_pairs()
         return Response(response)
@@ -29,7 +28,6 @@ def youtube_spotify_pairs(request):
         data = {}
         try:
             data = json.loads(body)
-          
             filterBy = data['type']
             media = data['media']
             guitars = filters.get_guitar_recommendations(filterBy, media)
