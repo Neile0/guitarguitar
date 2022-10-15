@@ -12,9 +12,9 @@
             <Spotify :uri="currentMedia.spotify"/>
         </div>
         <div>
-            <button @click="next('left')">&#60;</button>
-            <button @click="go()">Like</button>
-            <button @click="next('right')">&#62;</button>
+            <button style="margin-right:72px;" class="moveBtn" @click="next('left')">&#60;</button>
+            <button class="likeBtn" @click="go()">Like</button>
+            <button style="margin-left:72px;" class="moveBtn" @click="next('right')">&#62;</button>
         </div>
     </div>
 </template>
@@ -91,6 +91,23 @@
   
   <!-- Add "scoped" attribute to limit CSS to this component only -->
   <style scoped>
+  .moveBtn {
+    position: relative;
+    width: 48px;
+    height: 40px;
+    font-weight:bold;
+    background: #FFFFFF;
+    border-radius: 8px;
+  }
+
+  .likeBtn {
+    position: relative;
+    width: 96px;
+    height: 40px;
+    font-weight:bold;
+    background: #FFFFFF;
+    border-radius: 8px;
+  }
   h3 {
     margin: 40px 0 0;
   }
