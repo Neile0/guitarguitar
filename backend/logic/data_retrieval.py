@@ -27,6 +27,6 @@ def get_youtube_spotify_pairs():
     for obj in data:
         pair = {}
         pair['youtube'] = obj['youtubeUrl']
-        pair['spotify'] = obj['spotifyId']
+        pair['spotify'] = "https://open.spotify.com/embed/track/" + obj['spotifyId']
         pairs.append(pair)
     return pairs
