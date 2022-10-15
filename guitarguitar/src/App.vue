@@ -24,6 +24,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 0px;
+  background: linear-gradient(60deg, #565656, #84eef8);
 }
 html, body {
     height: 100%;

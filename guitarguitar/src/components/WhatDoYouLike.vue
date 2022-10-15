@@ -1,14 +1,23 @@
 <template> 
 <div>
   <link href="stylesheet.css" rel="stylesheet"> 
+    <div>
+      <p>What Do You Like</p>
+    </div>
     <div id="rectangle1">
-      <img  @click="go('shape')" :src="require('@/assets/guitar.png')" alt="guitar" width="150" height="400">
+      <img  @click="go('shape')" :src="require('@/assets/guitar.png')" alt="guitar" width="200" height="300">
+      <p>Body</p>
     </div>
     <div id="rectangle2">
-      <img @click="go('shape')" :src="require('@/assets/guitar.png')" alt="guitar" width="150" height="400">
+      <p></p>
+      <img  @click="go('shape')" :src="require('@/assets/pick-up.png')" alt="pickup" width="200" height="250">
+      <p>Sound</p>
     </div>
     <div id="rectangle3">
-      <img @click="go('shape')" :src="require('@/assets/guitar.png')" alt="guitar" width="150" height="400">
+      <img @click="go('shape')" :src="require('@/assets/gibson.png')" alt="guitar" width="200" height="100">
+      <img @click="go('shape')" :src="require('@/assets/fender.png')" alt="guitar" width="200" height="100">
+      <img @click="go('shape')" :src="require('@/assets/martin.png')" alt="guitar" width="200" height="90">
+      <p>Brand</p>
     </div>
     </div>
 </template>
@@ -54,6 +63,12 @@ export default {
   h3 {
     margin: 40px 0 0;
   }
+  p{
+    font-size: 50px;
+    font-weight: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    color: black
+  }
   ul {
     list-style-type: none;
     padding: 0;
@@ -63,37 +78,38 @@ export default {
     margin: 0 10px;
   }
   #rectangle1{
-  border-radius: 25px;
-  background: #767676;
-  opacity: 0.5;
-  padding: 20px;
-  width: 200px;
-  height: 400px;
-  position: absolute;
-  top: 150px;
-  left: 200px
+    font-size: 10px;
+    border-radius: 25px;
+    background: #767676;
+    opacity: 0.5;
+    padding: 20px;
+    width: 200px;
+    height: 400px;
+    position: absolute;
+    top: 150px;
+    left: 200px
   }
   #rectangle2{
-  border-radius: 25px;
-  background: #767676;
-  opacity: 0.5;
-  padding: 20px;
-  width: 200px;
-  height: 400px;
-  position: absolute;
-  top: 150px;
-  left: 500px
+    border-radius: 25px;
+    background: #767676;
+    opacity: 0.5;
+    padding: 20px;
+    width: 200px;
+    height: 400px;
+    position: absolute;
+    top: 150px;
+    left: 500px
   }
   #rectangle3{
-  border-radius: 25px;
-  background: #767676;
-  opacity: 0.5;
-  padding: 20px;
-  width: 200px;
-  height: 400px;
-  position: absolute;
-  top: 150px;
-  left: 800px
+    border-radius: 25px;
+    background: #767676;
+    opacity: 0.5;
+    padding: 20px;
+    width: 200px;
+    height: 400px;
+    position: absolute;
+    top: 150px;
+    left: 800px
   }
   </style>
   
