@@ -13,8 +13,9 @@
                 <p>Model: {{currentInfo.itemName}}</p>
                
             </div>
+            <iframe src="http://localhost:5500/model/index.html"></iframe>
             <div id="social">
-              
+              <button @click="goHome()" >Start again</button>
             </div>
         </div>
     </div>
@@ -46,13 +47,12 @@
         .then((response) => {
             this.info = response.data
             this.currentInfo = this.info[0]
-            console.log(this.info)
             this.gotGuitars = true
         })
     },
     methods: {
-        go() {
-            this.$router.push()
+        goHome() {
+            this.$router.push({name:'videoscreen'})
         },
         changemyVar() {
             this.myVar ="https://open.spotify.com/embed/track/1Ud6moTC0KyXMq1Oxfien0?si=c565fd4210664132"
