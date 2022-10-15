@@ -12,6 +12,8 @@ def get_guitars_with_songs():
 
 def get_guitars():
     data = requests.get(guitarsUrl)
+    for guitar in data:
+        guitar['has3DModel'] = False
     return data.json()
 
 def get_guitar(id):

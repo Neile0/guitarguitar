@@ -10,13 +10,13 @@
     </div>
     <div id="rectangle2">
       <p></p>
-      <img  @click="go('shape')" :src="require('@/assets/pick-up.png')" alt="pickup" width="200" height="250">
+      <img  @click="go('sound')" :src="require('@/assets/pick-up.png')" alt="pickup" width="200" height="250">
       <p>Sound</p>
     </div>
-    <div id="rectangle3">
-      <img @click="go('shape')" :src="require('@/assets/gibson.png')" alt="guitar" width="200" height="100">
-      <img @click="go('shape')" :src="require('@/assets/fender.png')" alt="guitar" width="200" height="100">
-      <img @click="go('shape')" :src="require('@/assets/martin.png')" alt="guitar" width="200" height="90">
+    <div @click="go('brand')" id="rectangle3">
+      <img  :src="require('@/assets/gibson.png')" alt="guitar" width="200" height="100">
+      <img  :src="require('@/assets/fender.png')" alt="guitar" width="200" height="100">
+      <img  :src="require('@/assets/martin.png')" alt="guitar" width="200" height="90">
       <p>Brand</p>
     </div>
     </div>
