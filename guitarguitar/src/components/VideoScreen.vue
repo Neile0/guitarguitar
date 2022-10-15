@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Choose your Guitar</h1>
+        <p>Choose your Guitar</p>
         <ul style="">
             <li @click="change('youtube')">Youtube</li>
             <li @click="change('spotify')">Spotify</li>
@@ -110,6 +110,12 @@
   }
   h3 {
     margin: 40px 0 0;
+  }
+  p{
+    font-size: 50px;
+    font-weight: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    color: black
   }
   ul {
     list-style-type: none;
