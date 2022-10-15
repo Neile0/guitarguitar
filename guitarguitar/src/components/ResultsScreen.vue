@@ -14,6 +14,11 @@
                
             </div>
             <iframe src="http://localhost:5500/model/index.html"></iframe>
+            
+            
+              <ThreeDModel/>
+            
+            
             <div id="social">
               <button @click="goHome()" >Start again</button>
             </div>
@@ -22,12 +27,12 @@
 </template>
   
   <script>
- 
+  import ThreeDModel from './ThreeDModel.vue'
   import axios from 'axios'
   export default {
     name: 'ResultsScreen',
     components: {
-      
+      ThreeDModel
     },
     props: ['type','media'],
     data () {

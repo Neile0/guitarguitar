@@ -1,6 +1,6 @@
 <template>
     <div class="hello">
-        <iframe style="border-radius:12px" width=420 height=315 :src="uri" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <model-viewer v-if="isMounted" src="/models/guitar150929289678002.glb" camera-controls></model-viewer>
     </div>
   </template>
   
@@ -9,7 +9,22 @@
     name: 'ThreeDModel',
     props: {
       uri: String
+    },
+    data () {
+      return {
+        src: "@/assets/guitar150929289678002.glb",
+        isMounted: false
+      }
+    },
+    mounted () {
+      this.isMounted = true
+      this.loadComponent()
+    },
+    computed: {
+    loadComponent() {
+      return () => import('@google/model-viewer');
     }
+  },
   }
   </script>
   
