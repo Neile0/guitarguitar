@@ -6,7 +6,8 @@
                 <div class='carousel__item-body'>
                     <div id="guitarImg" style="float:left;text-align:left;border:1px solid grey;width:100px;height:200;">
                         <img width=100 height=200 src="https://upload.wikimedia.org/wikipedia/commons/6/63/Fender_Stratocaster_004-2.jpg"/>
-                    </div>
+                        <ThreeDModel/>
+                      </div>
                     <div id="guitarInfo">
                         <p class='title'>Make:{{make}}</p>
                         <p>Model: {{model}}</p>
