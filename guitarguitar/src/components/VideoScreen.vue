@@ -114,6 +114,12 @@
   h3 {
     margin: 40px 0 0;
   }
+  p{
+    font-size: 50px;
+    font-weight: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    color: black
+  }
   ul {
     list-style-type: none;
     padding: 0;
