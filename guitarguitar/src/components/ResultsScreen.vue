@@ -1,30 +1,21 @@
 <template>
     <div>
-      <ThreeDModel/>
         <div class='wrapper'>
             <div class='carousel'>
-                <div class='carousel__item'>
+                <div v-for="item in info" :key="item.asn"  class='carousel__item'>
                     <div class='carousel__item-body'>
                         <div class='model'>
                             <ThreeDModel/>
                         </div>
-                        <div id="guitarInfo">
-                            <p class='title'>Make:{{make}}</p>
-                            <p>Model: {{model}}</p>
-                            <p>Guitarists: {{guitarists}} </p>
-                        </div>                    
-                    </div>
-                </div>
-                <div class='carousel__item'>
-                    <div class='carousel__item-body'>
                         <div id="guitarImg" style="float:left;text-align:left;border:1px solid grey;width:100px;height:200px;">
-                            <img width=100 height=200 src="https://upload.wikimedia.org/wikipedia/commons/6/63/Fender_Stratocaster_004-2.jpg"/>
+                            <img width=100 height=200 :src="item.pictureMain"/>
                         </div>
                         <div id="guitarInfo">
-                            <p class='title'>Make:{{make}}</p>
-                            <p>Model: {{model}}</p>
-                            <p>Guitarists: {{guitarists}} </p>
-                        </div>
+                          
+                            <p class='title'>Make:{{item.brandName}}</p>
+                            <p>Model: {{item.itemName}}</p>
+                           
+                        </div>                    
                     </div>
                 </div>
             </div>
@@ -44,19 +35,21 @@
     data () {
         return {
             gotGuitars: false,
+            info: [],
+            isLoaded:false,
             currentInfo: {},
             currentMedia: {"spotify":"https://open.spotify.com/embed/track/4vsoWZcvtvSsE0OiVvDDvX?si=e0c947796466427","youtube":"https://www.youtube.com/embed/Uz1Jwyxd4tE"}
         }
     },
     mounted () {
-        console.log("PROPS")
-        console.log(this.type)
-        console.log(this.media)
-        console.log(this.$route.params)
         this.data = { "type":this.type,"media":this.media}
         axios.post("http://localhost:8000/api/media/",this.data)
         .then((response) => {
             this.info = response.data
+            for (var i=0; i< 5; i++) {
+              console.log(this.info[i].brandName)
+            }
+            this.isLoaded = true
             console.log(this.info)
             this.currentInfo = this.info[0]
             this.gotGuitars = true
