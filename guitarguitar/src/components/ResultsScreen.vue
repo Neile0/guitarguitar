@@ -70,13 +70,13 @@
           return false
         },
         goHome() {
-            this.$router.push({name:'videoscreen'})
+            this.$router.push({ name: 'videoscreen' })
         },
         changemyVar() {
-            this.myVar ="https://open.spotify.com/embed/track/1Ud6moTC0KyXMq1Oxfien0?si=c565fd4210664132"
+            this.myVar = "https://open.spotify.com/embed/track/1Ud6moTC0KyXMq1Oxfien0?si=c565fd4210664132"
         },
         change(string) {
-            if ( string == "youtube" ) {
+            if (string == "youtube") {
                 this.youtubeSelected = true
                 this.spotifySelected = false
             } else {
@@ -113,10 +113,10 @@
     margin: 40px 0 0;
   }
 
-  .model{
+.model {
     position: relative;
-    right:100px;
-    top:50px;
+    right: 100px;
+    top: 50px;
   }
 
   .carousel {
@@ -128,6 +128,7 @@
     justify-content: center;
     flex-direction: column;
   }
+
   .carousel__item {
     display: flex;
     align-items: center;
@@ -268,6 +269,7 @@
     }
   }
 </style>
+
 
 
 /** <div id="social">
