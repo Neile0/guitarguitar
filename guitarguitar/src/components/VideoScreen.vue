@@ -19,7 +19,7 @@
     </div>
 </template>
   
-  <script>
+<script>
   import YouTube from './YouTube.vue'
   import Spotify from './Spotify.vue'
   import axios from 'axios'

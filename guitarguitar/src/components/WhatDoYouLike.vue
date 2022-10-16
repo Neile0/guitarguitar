@@ -55,7 +55,7 @@ export default {
           this.myVar ="https://open.spotify.com/embed/track/1Ud6moTC0KyXMq1Oxfien0?si=c565fd4210664132"
       },
       go(t) {
-          this.$router.push({name:'resultsscreen',params:{"type":t,"media":this.media}})
+          this.$router.push({name:'budgetscreen',params:{"type":t,"media":this.media}})
       },
       change(string) {
           if ( string == "youtube" ) {
