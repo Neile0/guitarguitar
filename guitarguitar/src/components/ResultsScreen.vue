@@ -2,163 +2,34 @@
     <div>
       <ThreeDModel/>
         <div class='wrapper'>
-        <div class='carousel'>
-            <div class='carousel__item'>
-                <div class='carousel__item-body'>
-                    <div id="guitarImg" style="float:left;text-align:left;border:1px solid grey;width:100px;height:200;">
-                        <img width=100 height=200 src="https://upload.wikimedia.org/wikipedia/commons/6/63/Fender_Stratocaster_004-2.jpg"/>
-                        <ThreeDModel/>
+            <div class='carousel'>
+                <div class='carousel__item'>
+                    <div class='carousel__item-body'>
+                        <div class='model'>
+                            <ThreeDModel/>
+                        </div>
+                        <div id="guitarInfo">
+                            <p class='title'>Make:{{make}}</p>
+                            <p>Model: {{model}}</p>
+                            <p>Guitarists: {{guitarists}} </p>
+                        </div>                    
                     </div>
-                    <div id="guitarInfo">
-                        <p class='title'>Make:{{make}}</p>
-                        <p>Model: {{model}}</p>
-                        <p>Guitarists: {{guitarists}} </p>
-                    </div>
-                    <div>
-                        <a href = "https://open.spotify.com/embed/track/4vsoWZcvtvSsE0OiVvDDvX?si=e0c947796466427" target = "_self">
-                            <img  src= "/assets/spotify.png" alt="spotify">
-                        </a>
-                    </div>
-                    
                 </div>
-            </div>
-            <div class='carousel__item'>
-                <div class='carousel__item-body'>
-                    <div>
-                        <ThreeDModel/>
-                    </div>
-                    <div id="guitarInfo">
-                        <p class='title'>Make:{{make}}</p>
-                        <p>Model: {{model}}</p>
-                        <p>Guitarists: {{guitarists}} </p>
-                    </div>
-                    <div>
-                        <a href=currentMedia.spotify>
-                            <img  src="require('@/assets/spotify.png')" alt="spotify" width="100" height="100">
-                        </a>
+                <div class='carousel__item'>
+                    <div class='carousel__item-body'>
+                        <div id="guitarImg" style="float:left;text-align:left;border:1px solid grey;width:100px;height:200px;">
+                            <img width=100 height=200 src="https://upload.wikimedia.org/wikipedia/commons/6/63/Fender_Stratocaster_004-2.jpg"/>
+                        </div>
+                        <div id="guitarInfo">
+                            <p class='title'>Make:{{make}}</p>
+                            <p>Model: {{model}}</p>
+                            <p>Guitarists: {{guitarists}} </p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class='carousel__item'>
-                <div class='carousel__item-body'>
-                    <div>
-                        <ThreeDModel/>
-                    </div>
-                    <div id="guitarInfo">
-                        <p class='title'>Make:{{make}}</p>
-                        <p>Model: {{model}}</p>
-                        <p>Guitarists: {{guitarists}} </p>
-                    </div>
-                    <div>
-                        <a href=currentMedia.spotify>
-                            <img  src="require('@/assets/spotify.png')" alt="spotify" width="100" height="100">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class='carousel__item'>
-                <div class='carousel__item-body'>
-                    <div id="guitarImg" style="float:left;text-align:left;border:1px solid grey;width:100px;height:200px;">
-                        <img width=100 height=200 src="https://upload.wikimedia.org/wikipedia/commons/6/63/Fender_Stratocaster_004-2.jpg"/>
-                    </div>
-                    <div id="guitarInfo">
-                        <p class='title'>Make:{{make}}</p>
-                        <p>Model: {{model}}</p>
-                        <p>Guitarists: {{guitarists}} </p>
-                    </div>
-                    <div>
-                        <a href = "https://open.spotify.com/embed/track/4vsoWZcvtvSsE0OiVvDDvX?si=e0c947796466427" target = "_self">
-                            <img  src= "/assets/spotify.png" alt="spotify">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class='carousel__item'>
-                <div class='carousel__item-body'>
-                    <div id="guitarImg" style="float:left;text-align:left;border:1px solid grey;width:100px;height:200px;">
-                        <img width=100 height=200 src="https://upload.wikimedia.org/wikipedia/commons/6/63/Fender_Stratocaster_004-2.jpg"/>
-                    </div>
-                    <div id="guitarInfo">
-                        <p class='title'>Make:{{make}}</p>
-                        <p>Model: {{model}}</p>
-                        <p>Guitarists: {{guitarists}} </p>
-                    </div>
-                    <div>
-                        <a href = "https://open.spotify.com/embed/track/4vsoWZcvtvSsE0OiVvDDvX?si=e0c947796466427" target = "_self">
-                            <img  src= "/assets/spotify.png" alt="spotify">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class='carousel__item'>
-                <div class='carousel__item-body'>
-                    <div id="guitarImg" style="float:left;text-align:left;border:1px solid grey;width:100px;height:200px;">
-                        <img width=100 height=200 src="https://upload.wikimedia.org/wikipedia/commons/6/63/Fender_Stratocaster_004-2.jpg"/>
-                    </div>
-                    <div id="guitarInfo">
-                        <p class='title'>Make:{{make}}</p>
-                        <p>Model: {{model}}</p>
-                        <p>Guitarists: {{guitarists}} </p>
-                    </div>
-                    <div>
-                        <a href = "https://open.spotify.com/embed/track/4vsoWZcvtvSsE0OiVvDDvX?si=e0c947796466427" target = "_self">
-                            <img  src= "/assets/spotify.png" alt="spotify">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class='carousel__item'>
-                <div class='carousel__item-body'>
-                    <div id="guitarImg" style="float:left;text-align:left;border:1px solid grey;width:100px;height:200px;">
-                        <img width=100 height=200 src="https://upload.wikimedia.org/wikipedia/commons/6/63/Fender_Stratocaster_004-2.jpg"/>
-                    </div>
-                    <div id="guitarInfo">
-                        <p class='title'>Make:{{make}}</p>
-                        <p>Model: {{model}}</p>
-                        <p>Guitarists: {{guitarists}} </p>
-                    </div>
-                    <div>
-                        <a href = "https://open.spotify.com/embed/track/4vsoWZcvtvSsE0OiVvDDvX?si=e0c947796466427" target = "_self">
-                            <img  src= "/assets/spotify.png" alt="spotify">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class='carousel__item'>
-                <div class='carousel__item-body'>
-                    <div id="guitarImg" style="float:left;text-align:left;border:1px solid grey;width:100px;height:200px;">
-                        <img width=100 height=200 src="https://upload.wikimedia.org/wikipedia/commons/6/63/Fender_Stratocaster_004-2.jpg"/>
-                    </div>
-                    <div id="guitarInfo">
-                        <p class='title'>Make:{{make}}</p>
-                        <p>Model: {{model}}</p>
-                        <p>Guitarists: {{guitarists}} </p>
-                    </div>
-                    <div>
-                        <a href = "https://open.spotify.com/embed/track/4vsoWZcvtvSsE0OiVvDDvX?si=e0c947796466427" target = "_self">
-                            <img  src= "/assets/spotify.png" alt="spotify">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class='carousel__item'>
-                <div class='carousel__item-body'>
-                    <div id="guitarImg" style="float:left;text-align:left;border:1px solid grey;width:100px;height:200px;">
-                        <img width=100 height=200 src="https://upload.wikimedia.org/wikipedia/commons/6/63/Fender_Stratocaster_004-2.jpg"/>
-                    </div>
-                    <div id="guitarInfo">
-                        <p class='title'>Make:{{make}}</p>
-                        <p>Model: {{model}}</p>
-                        <p>Guitarists: {{guitarists}} </p>
-                    </div>
-                        <a href = "https://open.spotify.com/embed/track/4vsoWZcvtvSsE0OiVvDDvX?si=e0c947796466427" target = "_self">
-                            <img  src= "/assets/spotify.png" alt="spotify">
-                        </a>
-                </div>
-            </div>
+        </div>
     </div>
-    </div>
-</div>
 </template>
   
   <script>
@@ -234,6 +105,12 @@
   
   h3 {
     margin: 40px 0 0;
+  }
+
+  .model{
+    position: relative;
+    right:100px;
+    top:50px;
   }
 
   .carousel {
