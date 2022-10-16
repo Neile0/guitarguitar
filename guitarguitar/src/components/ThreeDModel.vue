@@ -1,6 +1,6 @@
 <template>
     <div class="hello">
-        <model-viewer v-if="isMounted" src="/guitarThreeD.glb" camera-controls></model-viewer>
+        <model-viewer v-if="isMounted" disable-tap auto-rotate shadow-intensity="1" camera-controls interaction-prompt="none" rotation-per-second = "15deg" touch-action="pan-y" src="/guitarThreeD.glb" ar ar-modes="webxr scene-viewer quick-look"></model-viewer>
     </div>
   </template>
   
