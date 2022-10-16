@@ -4,7 +4,7 @@
             <div class='carousel'>
                 <div v-for="item in info" :key="item.skU_ID"  class='carousel__item'>
                     <div class='carousel__item-body'>
-                        <div v-if="hasModel(item.skU_ID)" class='model'>
+                        <div v-if="hasModel(item.skU_ID)" style="float:left;text-align:left;border:1px solid grey;padding-right:36px;width:100px;height:200px;">
                             <ThreeDModel :uri="'/models/'+item.skU_ID+'/' + item.skU_ID + '.glb'" :poster="'/models/'+item.skU_ID+'/'+'poster.webp'"/>
                         </div>
                         <div v-if="!hasModel(item.skU_ID)" id="guitarImg" style="float:left;text-align:left;border:1px solid grey;width:100px;height:200px;">
@@ -138,53 +138,53 @@
     opacity: 0;
     filter: drop-shadow(0 2px 2px #555);
     will-change: transform, opacity;
-    -webkit-animation: carousel-animate-vertical 45s linear infinite;
-            animation: carousel-animate-vertical 45s linear infinite;
+    -webkit-animation: carousel-animate-vertical 100s linear infinite;
+            animation: carousel-animate-vertical 100s linear infinite;
   }
   
   .carousel__item:nth-child(1) {
-    -webkit-animation-delay: calc(5s * -1);
-            animation-delay: calc(5s * -1);
+    -webkit-animation-delay: calc(10s * -1);
+            animation-delay: calc(10s * -1);
   }
   
   .carousel__item:nth-child(2) {
-    -webkit-animation-delay: calc(5s * 0);
-            animation-delay: calc(5s * 0);
+    -webkit-animation-delay: calc(10s * 0);
+            animation-delay: calc(10s * 0);
   }
   
   .carousel__item:nth-child(3) {
-    -webkit-animation-delay: calc(5s * 1);
-            animation-delay: calc(5s * 1);
+    -webkit-animation-delay: calc(10s * 1);
+            animation-delay: calc(10s * 1);
   }
   
   .carousel__item:nth-child(4) {
-    -webkit-animation-delay: calc(5s * 2);
-            animation-delay: calc(5s * 2);
+    -webkit-animation-delay: calc(10s * 2);
+            animation-delay: calc(10s * 2);
   }
   
   .carousel__item:nth-child(5) {
-    -webkit-animation-delay: calc(5s * 3);
-            animation-delay: calc(5s * 3);
+    -webkit-animation-delay: calc(10s * 3);
+            animation-delay: calc(10s * 3);
   }
   
   .carousel__item:nth-child(6) {
-    -webkit-animation-delay: calc(5s * 4);
-            animation-delay: calc(5s * 4);
+    -webkit-animation-delay: calc(10s * 4);
+            animation-delay: calc(10s * 4);
   }
   
   .carousel__item:nth-child(7) {
-    -webkit-animation-delay: calc(5s * 5);
-            animation-delay: calc(5s * 5);
+    -webkit-animation-delay: calc(10s * 5);
+            animation-delay: calc(10s * 5);
   }
   
   .carousel__item:nth-child(8) {
-    -webkit-animation-delay: calc(5s * 6);
-            animation-delay: calc(5s * 6);
+    -webkit-animation-delay: calc(10s * 6);
+            animation-delay: calc(10s * 6);
   }
   
   .carousel__item:last-child {
-    -webkit-animation-delay: calc(-5s * 2);
-            animation-delay: calc(-5s * 2);
+    -webkit-animation-delay: calc(-10s * 2);
+            animation-delay: calc(-10s * 2);
   }
   
   
