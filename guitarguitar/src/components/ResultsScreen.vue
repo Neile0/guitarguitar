@@ -5,7 +5,7 @@
                 <div v-for="item in info" :key="item.skU_ID"  class='carousel__item'>
                     <div class='carousel__item-body'>
                         <div v-if="hasModel(item.skU_ID)" class='model'>
-                            <ThreeDModel :uri="'/models/'+item.skU_ID+'/' + item.skU_ID + '.glb'"/>
+                            <ThreeDModel :uri="'/models/'+item.skU_ID+'/' + item.skU_ID + '.glb'" :poster="'/models/'+item.skU_ID+'/'+'poster.webp'"/>
                         </div>
                         <div v-if="!hasModel(item.skU_ID)" id="guitarImg" style="float:left;text-align:left;border:1px solid grey;width:100px;height:200px;">
                             <img width=100 height=200 :src="item.pictureMain"/>
