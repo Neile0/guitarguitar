@@ -1,6 +1,6 @@
 <template>
     <div class="hello">
-        <iframe id="youtube_player" class="yt_player_iframe" width="420" height="315"
+        <iframe id="youtube_player" class="yt_player_iframe" width="720" height="515"
         :src="uri">
         </iframe>
     </div>
@@ -30,6 +30,10 @@
   }
   a {
     color: #42b983;
+  }
+
+  .yt_player_iframe{
+    border-radius: 2%;
   }
   </style>
   

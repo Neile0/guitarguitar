@@ -1,6 +1,6 @@
 <template>
     <div class="hello">
-        <model-viewer v-if="isMounted" :src="uri" camera-controls></model-viewer>
+        <model-viewer v-if="isMounted" disable-tap auto-rotate shadow-intensity="1" camera-controls interaction-prompt="none" rotation-per-second = "15deg" touch-action="pan-y" :src="uri" :poster="poster" ar ar-modes="webxr scene-viewer quick-look"></model-viewer>
     </div>
   </template>
   
@@ -8,7 +8,8 @@
   export default {
     name: 'ThreeDModel',
     props: {
-      uri: String
+      uri: String,
+      poster: String,
     },
     data (){
       return{
@@ -29,6 +30,9 @@
   
   <!-- Add "scoped" attribute to limit CSS to this component only -->
   <style scoped>
+  model-viewer {
+    width:150px;height:200px;
+  }
   h3 {
     margin: 40px 0 0;
   }

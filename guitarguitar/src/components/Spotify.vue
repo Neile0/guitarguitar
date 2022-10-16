@@ -1,6 +1,6 @@
 <template>
     <div class="hello">
-        <iframe style="border-radius:12px" width=420 height=315 :src="uri" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe class = "soptifyIframe" style="border-radius:12px" width=600 height=500 :src="uri" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
   </template>
   
@@ -29,5 +29,6 @@
   a {
     color: #42b983;
   }
+
   </style>
   

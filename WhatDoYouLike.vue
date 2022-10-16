@@ -1,7 +1,8 @@
 <template> 
     <div>
         <h1>What Do You Like</h1>
-        <div id="rectangle1">
+        <div class="buttons_what_do_you_like">
+          <div id="rectangle1">
           <!--<a target="_blank" href="guitar.png">-->
             <img :src="require('@/assets/guitar.png')" alt="guitar" width="200" height="400">
           <!--</a>-->
@@ -21,6 +22,8 @@
         <button @click="changemyVar()">Like</button>
         </div>
         -->
+        </div>
+        
     </div>
 </template>
   <!--
@@ -76,7 +79,9 @@ import Spotify from './Spotify.vue'
   li {
     display: inline-block;
     margin: 0 10px;
+    
   }
+
   #rectangle1{
   border-radius: 25px;
   background: #767676;

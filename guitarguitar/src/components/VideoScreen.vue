@@ -2,8 +2,8 @@
     <div>
         <p style="color:white;">Choose your Guitar</p>
         <ul style="color:white;">
-            <button @click="change('youtube')"><img src="@/assets/youtube.png" width="50" height="50"></button>
-            <button @click="change('spotify')"><img src="@/assets/spotify.png" width="50" height="50"></button>
+            <button @click="change('youtube')" class="media_buttons"><img src="@/assets/youtube.png" width="50" height="50"></button>
+            <button @click="change('spotify')" class="media_buttons"><img src="@/assets/spotify.png" width="50" height="50"></button>
         </ul>
         <div v-if="youtubeSelected">
             <YouTube :uri="currentMedia.youtube"/>
@@ -96,21 +96,30 @@
   <style scoped>
   .moveBtn {
     position: relative;
-    width: 48px;
-    height: 40px;
+    width: 100px;
+    height: 50px;
     font-weight:bold;
-    background: #FFFFFF;
+    background: #ffffff83;
     border-radius: 8px;
+  }
+
+  .moveBtn:hover{
+    background: #ffffffda;
   }
 
   .likeBtn {
     position: relative;
-    width: 96px;
-    height: 40px;
+    width: 150px;
+    height: 50px;
     font-weight:bold;
-    background: #FFFFFF;
+    background: #ffffff83;
     border-radius: 8px;
   }
+
+  .likeBtn:hover {
+    background: #ffffffda;
+  }
+
   h3 {
     margin: 40px 0 0;
   }
@@ -124,13 +133,24 @@
   ul {
     list-style-type: none;
     padding: 0;
+    margin: none;
+  }
+
+  .media_buttons{
+background-color: #33849cb6;
+width: 220px;
+  }
+
+  .media_buttons:hover{
+background-color: #33849c;
+
   }
   li {
     display: inline-block;
     margin: 0 10px;
   }
   a {
-    color: #42b983;
+    color: #8ba79b;
   }
   p{
     font-size: 50px;
