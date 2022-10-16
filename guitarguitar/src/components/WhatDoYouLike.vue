@@ -2,22 +2,35 @@
 <div>
   <link href="stylesheet.css" rel="stylesheet"> 
     <div>
-      <p>What Do You Like</p>
+      <p style="color:white;">What Do You Like</p>
     </div>
     <div id="rectangle1">
-      <img  @click="go('shape')" :src="require('@/assets/guitar.png')" alt="guitar" width="200" height="300">
-      <p>Body</p>
+      <div class="image-stack">
+        <div class="image-stack__item image-stack__item--topguitar">
+          <img  @click="go('shape')" :src="require('@/assets/guitar.png')" alt="guitar" width="100" height="300">
+        </div>
+        <div class="image-stack__item image-stack__item--bottomguitar">
+          <img  @click="go('shape')" :src="require('@/assets/guitar2.png')" alt="guitar" width="100" height="300">
+        </div>
+      </div>
+      <b>Looks</b>
     </div>
     <div id="rectangle2">
-      <p></p>
-      <img  @click="go('sound')" :src="require('@/assets/pick-up.png')" alt="pickup" width="200" height="250">
-      <p>Sound</p>
+      <div class="image-stack">
+        <div class="image-stack__item image-stack__item--toppick">
+          <img  @click="go('shape')" :src="require('@/assets/pick-up.png')" alt="pick-up" width="150" height="200">
+        </div>
+        <div class="image-stack__item image-stack__item--bottompick">
+          <img  @click="go('shape')" :src="require('@/assets/pick-up2.png')" alt="pick-up" width="150" height="200">
+        </div>
+      </div>
+      <b>Sound</b>
     </div>
     <div @click="go('brand')" id="rectangle3">
-      <img  :src="require('@/assets/gibson.png')" alt="guitar" width="200" height="100">
-      <img  :src="require('@/assets/fender.png')" alt="guitar" width="200" height="100">
-      <img  :src="require('@/assets/martin.png')" alt="guitar" width="200" height="90">
-      <p>Brand</p>
+      <img  :src="require('@/assets/gibson.png')" alt="guitar" width="200" height="95">
+      <img  :src="require('@/assets/fender.png')" alt="guitar" width="200" height="95">
+      <img  :src="require('@/assets/martin.png')" alt="guitar" width="200" height="80">
+      <b>Brand</b>
     </div>
     </div>
 </template>
@@ -65,9 +78,10 @@ export default {
   }
   p{
     font-size: 50px;
-    font-weight: 20px;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
     font-family: 'Courier New', Courier, monospace;
-    color: black
+    color: rgb(0, 0, 0)
   }
   ul {
     list-style-type: none;
@@ -78,7 +92,11 @@ export default {
     margin: 0 10px;
   }
   #rectangle1{
-    font-size: 10px;
+    font-size: 50px;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(0, 0, 0);
     border-radius: 25px;
     background: #767676;
     opacity: 0.5;
@@ -90,6 +108,11 @@ export default {
     left: 200px
   }
   #rectangle2{
+    font-size: 50px;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(0, 0, 0);
     border-radius: 25px;
     background: #767676;
     opacity: 0.5;
@@ -101,6 +124,11 @@ export default {
     left: 500px
   }
   #rectangle3{
+    font-size: 50px;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(0, 0, 0);
     border-radius: 25px;
     background: #767676;
     opacity: 0.5;
@@ -110,6 +138,57 @@ export default {
     position: absolute;
     top: 150px;
     left: 800px
+  }
+  #rectangle1:hover{
+    background-color: black;
+    transition: 0.3s;
+    color: white;
+  }
+  #rectangle2:hover{
+    background-color: black;
+    transition: 0.3s;
+    color: white;
+  }
+  #rectangle3:hover{
+    background-color: black;
+    transition: 0.3s;
+    color: white;
+  }
+  .image-stack {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    position: relative;
+  }
+  .image-stack__item--topguitar {
+      z-index: 2;
+      position: relative;
+      left: 0px;
+      padding: 0px 60px 0px 50px;
+    }
+  .image-stack__item--topguitar:hover{
+    opacity: 0;
+  }
+    .image-stack__item--bottomguitar {
+      position: absolute;
+      left: 50px;
+      z-index:1;
+  }
+
+  .image-stack__item--toppick {
+      z-index: 2;
+      position: relative;
+      left: 0px;
+      top: 0px;
+      padding: 60px 40px 40px 30px;
+    }
+  .image-stack__item--toppick:hover{
+    opacity: 0;
+  }
+    .image-stack__item--bottompick {
+      position: absolute;
+      left: 30px;
+      top: 60px;
+      z-index:1;
   }
   </style>
   

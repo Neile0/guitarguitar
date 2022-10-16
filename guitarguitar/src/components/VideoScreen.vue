@@ -1,9 +1,9 @@
 <template>
     <div>
-        <h1 style="color:white;">Choose your Guitar</h1>
+        <p style="color:white;">Choose your Guitar</p>
         <ul style="color:white;">
-            <button @click="change('youtube')">Youtube</button>
-            <button @click="change('spotify')">Spotify</button>
+            <button @click="change('youtube')"><img src="@/assets/youtube.png" width="50" height="50"></button>
+            <button @click="change('spotify')"><img src="@/assets/spotify.png" width="50" height="50"></button>
         </ul>
         <div v-if="youtubeSelected">
             <YouTube :uri="currentMedia.youtube"/>
@@ -116,7 +116,8 @@
   }
   p{
     font-size: 50px;
-    font-weight: 20px;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
     font-family: 'Courier New', Courier, monospace;
     color: black
   }
@@ -130,6 +131,12 @@
   }
   a {
     color: #42b983;
+  }
+  p{
+    font-size: 50px;
+    font-weight: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    color: black
   }
   </style>
   
