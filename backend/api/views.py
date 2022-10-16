@@ -36,4 +36,7 @@ def youtube_spotify_pairs(request):
             print("Cannot jsonify")
             return Response("", status=status.HTTP_406_NOT_ACCEPTABLE)
     
-
+@api_view(['GET'])
+def guitar_ids_with_3d_models(request):
+    response = data_retrieval.get_guitar_ids_with_models()
+    return Response(response)
