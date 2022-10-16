@@ -27,9 +27,31 @@
       <b>Sound</b>
     </div>
     <div @click="go('brand')" id="rectangle3">
-      <img  :src="require('@/assets/gibson.png')" alt="guitar" width="200" height="95">
-      <img  :src="require('@/assets/fender.png')" alt="guitar" width="200" height="95">
-      <img  :src="require('@/assets/martin.png')" alt="guitar" width="200" height="80">
+      <div class="image-stack">
+        <div class="image-stack__item image-stack__item--topgibson">
+          <img  @click="go('shape')" :src="require('@/assets/Gibson.png')" alt="pick-up" width="200" height="90">
+        </div>
+        <div class="image-stack__item image-stack__item--bottomgibson">
+          <img  @click="go('shape')" :src="require('@/assets/gibson2.png')" alt="pick-up" width="200" height="90">
+        </div>
+      
+      </div>
+      <div class="image-stack">
+        <div class="image-stack__item image-stack__item--topfender">
+          <img  @click="go('shape')" :src="require('@/assets/fender.png')" alt="pick-up" width="200" height="90">
+        </div>
+        <div class="image-stack__item image-stack__item--bottomfender">
+          <img  @click="go('shape')" :src="require('@/assets/fender2.png')" alt="pick-up" width="200" height="90">
+        </div>
+      </div>
+      <div class="image-stack">
+        <div class="image-stack__item image-stack__item--topmartin">
+          <img  @click="go('shape')" :src="require('@/assets/martin.png')" alt="pick-up" width="200" height="90">
+        </div>
+        <div class="image-stack__item image-stack__item--bottommartin">
+          <img  @click="go('shape')" :src="require('@/assets/martin2.png')" alt="pick-up" width="200" height="90">
+        </div>
+      </div>
       <b>Brand</b>
     </div>
     </div>
@@ -188,6 +210,54 @@ export default {
       position: absolute;
       left: 30px;
       top: 60px;
+      z-index:1;
+  }
+  .image-stack__item--topfender {
+      z-index: 2;
+      position: relative;
+      left: 0px;
+      top: 0px;
+      padding: 0px 0px 0px 0px;
+    }
+  .image-stack__item--topfender:hover{
+    opacity: 0;
+  }
+    .image-stack__item--bottomfender {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index:1;
+  }
+  .image-stack__item--topgibson {
+      z-index: 2;
+      position: relative;
+      left: 0px;
+      top: 0px;
+      padding: 0px 0px 0px 0px;
+    }
+  .image-stack__item--topgibson:hover{
+    opacity: 0;
+  }
+    .image-stack__item--bottomgibson {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index:1;
+  }
+  .image-stack__item--topmartin {
+      z-index: 2;
+      position: relative;
+      left: 0px;
+      top: 0px;
+      padding: 0px 0px 0px 0px;
+    }
+  .image-stack__item--topmartin:hover{
+    opacity: 0;
+  }
+    .image-stack__item--bottommartin {
+      position: absolute;
+      left: 0px;
+      top: 0px;
       z-index:1;
   }
   </style>

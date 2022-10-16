@@ -1,5 +1,6 @@
 from urllib import request
 import requests
+import os
 
 guitarIdLookupField = 'skU_ID'
 
@@ -12,8 +13,6 @@ def get_guitars_with_songs():
 
 def get_guitars():
     data = requests.get(guitarsUrl)
-    for guitar in data:
-        guitar['has3DModel'] = False
     return data.json()
 
 def get_guitar(id):
@@ -33,3 +32,7 @@ def get_youtube_spotify_pairs():
         pair['spotify'] = "https://open.spotify.com/embed/track/" + obj['spotifyId'] + "?autoplay=1&controls=0&mute=0"
         pairs.append(pair)
     return pairs
+
+def get_guitar_ids_with_models():
+    dirs = [x[1] for x in os.walk('../guitarguitar/public/models')]
+    return dirs[0]
