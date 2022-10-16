@@ -23,6 +23,7 @@ def get_guitar_from_youtube(url):
 
 def get_guitars_with_matching(guitarID, lookupField):
     guitars = get_guitars()
+    print(guitars)
     searchingGuitar = get_guitar(guitarID)
     criteria = searchingGuitar[lookupField]
     filteredGuitars = []
@@ -43,4 +44,5 @@ def get_guitar_recommendations(filterBy, media):
     }
     print(f"GuitarID: {guitarID} FilterBy: {filters[filterBy]}")
     guitars = get_guitars_with_matching(guitarID, filters[filterBy])
+    print(guitars) 
     return guitars
