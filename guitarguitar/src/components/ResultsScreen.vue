@@ -1,5 +1,6 @@
 <template>
     <div>
+      <ThreeDModel/>
         <div class='wrapper'>
         <div class='carousel'>
             <div class='carousel__item'>
