@@ -2,12 +2,12 @@
     <div>
         <div class='wrapper'>
             <div class='carousel'>
-                <div v-for="item in info" :key="item.asn"  class='carousel__item'>
+                <div v-for="item in info" :key="item.skU_ID"  class='carousel__item'>
                     <div class='carousel__item-body'>
-                        <div class='model'>
-                            <ThreeDModel/>
+                        <div v-if="hasModel(item.skU_ID)" class='model'>
+                            <ThreeDModel :uri="'/models/'+item.skU_ID+'/' + item.skU_ID + '.glb'"/>
                         </div>
-                        <div id="guitarImg" style="float:left;text-align:left;border:1px solid grey;width:100px;height:200px;">
+                        <div v-if="!hasModel(item.skU_ID)" id="guitarImg" style="float:left;text-align:left;border:1px solid grey;width:100px;height:200px;">
                             <img width=100 height=200 :src="item.pictureMain"/>
                         </div>
                         <div id="guitarInfo">
@@ -43,6 +43,11 @@
     },
     mounted () {
         this.data = { "type":this.type,"media":this.media}
+        axios.get("http://localhost:8000/api/3d-models")
+        .then((response) => {
+          this.modelGuitars = response.data
+          console.log(this.modelGuitars)
+        })
         axios.post("http://localhost:8000/api/media/",this.data)
         .then((response) => {
             this.info = response.data
@@ -56,6 +61,15 @@
         })
     },
     methods: {
+        hasModel(id) {
+          console.log(id)
+          for (var i=0; i < this.modelGuitars.length; i++) {
+            if (this.modelGuitars[i] == id) {
+              return true
+            }
+          }
+          return false
+        },
         goHome() {
             this.$router.push({name:'videoscreen'})
         },

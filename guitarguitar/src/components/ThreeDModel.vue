@@ -1,6 +1,6 @@
 <template>
     <div class="hello">
-        <model-viewer v-if="isMounted" src="/guitarThreeD.glb" camera-controls></model-viewer>
+        <model-viewer v-if="isMounted" :src="uri" camera-controls></model-viewer>
     </div>
   </template>
   
