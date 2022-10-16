@@ -4,7 +4,8 @@
     <div>
       <p style="color:white;">What Do You Like</p>
     </div>
-    <div id="rectangle1">
+    <div class="AllButtons" style="width: 90%;margin-left 5%">
+      <div id="rectangle1">
       <div class="image-stack">
         <div class="image-stack__item image-stack__item--topguitar">
           <img  @click="go('shape')" :src="require('@/assets/guitar.png')" alt="guitar" width="100" height="300">
@@ -32,6 +33,8 @@
       <img  :src="require('@/assets/martin.png')" alt="guitar" width="200" height="80">
       <b>Brand</b>
     </div>
+    </div>
+   
     </div>
 </template>
 <script>
@@ -103,9 +106,10 @@ export default {
     padding: 20px;
     width: 200px;
     height: 400px;
-    position: absolute;
-    top: 150px;
-    left: 200px
+    margin-left: 33%;
+    margin-right: 3%;
+    float: left;
+
   }
   #rectangle2{
     font-size: 50px;
@@ -119,9 +123,10 @@ export default {
     padding: 20px;
     width: 200px;
     height: 400px;
-    position: absolute;
-    top: 150px;
-    left: 500px
+    margin-left: 3%;
+    margin-right: 3%;
+    float: left;
+    
   }
   #rectangle3{
     font-size: 50px;
@@ -135,9 +140,9 @@ export default {
     padding: 20px;
     width: 200px;
     height: 400px;
-    position: absolute;
-    top: 150px;
-    left: 800px
+    margin-left: 3%;
+    margin-right: 3%;
+    float: left;
   }
   #rectangle1:hover{
     background-color: black;

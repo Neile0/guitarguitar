@@ -104,12 +104,13 @@
   }
 
   .moveBtn:hover{
-    background: #ffffffda;
+    background: #d3d3d3d2;
+    transition: 0.2s;
   }
 
   .likeBtn {
     position: relative;
-    width: 150px;
+    width: 250px;
     height: 50px;
     font-weight:bold;
     background: #ffffff83;
@@ -117,7 +118,8 @@
   }
 
   .likeBtn:hover {
-    background: #ffffffda;
+    background: #d3d3d3d2;
+    transition: 0.2s;
   }
 
   h3 {
@@ -143,6 +145,7 @@ width: 220px;
 
   .media_buttons:hover{
 background-color: #33849c;
+transition: 0.2s;
 
   }
   li {
