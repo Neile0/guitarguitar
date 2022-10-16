@@ -7,8 +7,8 @@
                 <div class='carousel__item-body'>
                     <div id="guitarImg" style="float:left;text-align:left;border:1px solid grey;width:100px;height:200;">
                         <img width=100 height=200 src="https://upload.wikimedia.org/wikipedia/commons/6/63/Fender_Stratocaster_004-2.jpg"/>
-                        
-                      </div>
+                        <ThreeDModel/>
+                    </div>
                     <div id="guitarInfo">
                         <p class='title'>Make:{{make}}</p>
                         <p>Model: {{model}}</p>
@@ -24,8 +24,8 @@
             </div>
             <div class='carousel__item'>
                 <div class='carousel__item-body'>
-                    <div id="guitarImg" style="float:left;text-align:left;border:1px solid grey;width:100px;height:200;">
-                        <img width=100 height=200 src="https://upload.wikimedia.org/wikipedia/commons/6/63/Fender_Stratocaster_004-2.jpg"/>
+                    <div>
+                        <ThreeDModel/>
                     </div>
                     <div id="guitarInfo">
                         <p class='title'>Make:{{make}}</p>
@@ -41,8 +41,8 @@
             </div>
             <div class='carousel__item'>
                 <div class='carousel__item-body'>
-                    <div id="guitarImg" style="float:left;text-align:left;border:1px solid grey;width:100px;height:200px;">
-                        <img width=100 height=200 src="https://upload.wikimedia.org/wikipedia/commons/6/63/Fender_Stratocaster_004-2.jpg"/>
+                    <div>
+                        <ThreeDModel/>
                     </div>
                     <div id="guitarInfo">
                         <p class='title'>Make:{{make}}</p>
@@ -162,7 +162,7 @@
 </template>
   
   <script>
- import ThreeDModel from './ThreeDModel.vue'
+  import ThreeDModel from './ThreeDModel.vue'
   import axios from 'axios'
   export default {
     name: 'ResultsScreen',
@@ -225,17 +225,26 @@
   opacity: 1;
   background-color: #fff;
   z-index: 99;
-}
-
+  }
+  
 #loading-image {
   z-index: 100;
-}
-
-
+  }
+  
+  
   h3 {
     margin: 40px 0 0;
   }
-  
+
+  .carousel {
+    position: relative;
+    top: 350px;
+    left: 300px;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
   .carousel__item {
     display: flex;
     align-items: center;
@@ -245,76 +254,62 @@
     opacity: 0;
     filter: drop-shadow(0 2px 2px #555);
     will-change: transform, opacity;
-    -webkit-animation: carousel-animate-vertical 27s linear infinite;
-            animation: carousel-animate-vertical 27s linear infinite;
+    -webkit-animation: carousel-animate-vertical 45s linear infinite;
+            animation: carousel-animate-vertical 45s linear infinite;
   }
   
   .carousel__item:nth-child(1) {
-    -webkit-animation-delay: calc(3s * -1);
-            animation-delay: calc(3s * -1);
+    -webkit-animation-delay: calc(5s * -1);
+            animation-delay: calc(5s * -1);
   }
   
   .carousel__item:nth-child(2) {
-    -webkit-animation-delay: calc(3s * 0);
-            animation-delay: calc(3s * 0);
+    -webkit-animation-delay: calc(5s * 0);
+            animation-delay: calc(5s * 0);
   }
   
   .carousel__item:nth-child(3) {
-    -webkit-animation-delay: calc(3s * 1);
-            animation-delay: calc(3s * 1);
+    -webkit-animation-delay: calc(5s * 1);
+            animation-delay: calc(5s * 1);
   }
   
   .carousel__item:nth-child(4) {
-    -webkit-animation-delay: calc(3s * 2);
-            animation-delay: calc(3s * 2);
+    -webkit-animation-delay: calc(5s * 2);
+            animation-delay: calc(5s * 2);
   }
   
   .carousel__item:nth-child(5) {
-    -webkit-animation-delay: calc(3s * 3);
-            animation-delay: calc(3s * 3);
+    -webkit-animation-delay: calc(5s * 3);
+            animation-delay: calc(5s * 3);
   }
   
   .carousel__item:nth-child(6) {
-    -webkit-animation-delay: calc(3s * 4);
-            animation-delay: calc(3s * 4);
+    -webkit-animation-delay: calc(5s * 4);
+            animation-delay: calc(5s * 4);
   }
   
   .carousel__item:nth-child(7) {
-    -webkit-animation-delay: calc(3s * 5);
-            animation-delay: calc(3s * 5);
+    -webkit-animation-delay: calc(5s * 5);
+            animation-delay: calc(5s * 5);
   }
   
   .carousel__item:nth-child(8) {
-    -webkit-animation-delay: calc(3s * 6);
-            animation-delay: calc(3s * 6);
+    -webkit-animation-delay: calc(5s * 6);
+            animation-delay: calc(5s * 6);
   }
   
   .carousel__item:last-child {
-    -webkit-animation-delay: calc(-3s * 2);
-            animation-delay: calc(-3s * 2);
+    -webkit-animation-delay: calc(-5s * 2);
+            animation-delay: calc(-5s * 2);
   }
   
-  .carousel__item-head {
-    border-radius: 50%;
-    background-color: #d7f7fc;
-    width: 90px;
-    height: 90px;
-    padding: 14px;
-    position: relative;
-    margin-right: -45px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 50px;
-  }
   
   .carousel__item-body {
     width: 100%;
     background-color: #fff;
     border-radius: 8px;
     padding: 16px 20px 16px 70px;
-    box-sizing: 900px;
+    box-sizing: 100px;
   }
   
   .title {
