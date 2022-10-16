@@ -4,12 +4,14 @@
 
 <script>
 export default{
-    name: 'RangeSelector'
+    name: 'RangeSelector',
+    component:{
+        
+    }
 }
 </script>
 
 <style>
-
 .slider {
   -webkit-appearance: none;
   width: 100%;
@@ -40,5 +42,4 @@ export default{
   background: #04AA6D;
   cursor: pointer;
 }
-
 </style>
