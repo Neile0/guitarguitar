@@ -1,119 +1,152 @@
 <template>
-    <div>
-      <ThreeDModel/>
-        <div class='wrapper'>
-            <div class='carousel'>
-                <div class='carousel__item'>
-                    <div class='carousel__item-body'>
-                        <div class='model'>
-                            <ThreeDModel/>
-                        </div>
-                        <div id="guitarInfo">
-                            <p class='title'>Make:{{make}}</p>
-                            <p>Model: {{model}}</p>
-                            <p>Guitarists: {{guitarists}} </p>
-                        </div>                    
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+        <div class="main-gallery js-flickity" data-flickity='{ "cellAlign": "left", "contain":true}'>
+            <div class='gallery-cell'>
+                <div class='carousel__item-body'>
+                    <div class='model'>
+                        <ThreeDModel />
+                    </div>
+                    <div id="guitarInfo">
+                        <p class='title'>Make:{{make}}</p>
+                        <p>Model: {{model}}</p>
+                        <p>Guitarists: {{guitarists}} </p>
                     </div>
                 </div>
-                <div class='carousel__item'>
-                    <div class='carousel__item-body'>
-                        <div id="guitarImg" style="float:left;text-align:left;border:1px solid grey;width:100px;height:200px;">
-                            <img width=100 height=200 src="https://upload.wikimedia.org/wikipedia/commons/6/63/Fender_Stratocaster_004-2.jpg"/>
-                        </div>
-                        <div id="guitarInfo">
-                            <p class='title'>Make:{{make}}</p>
-                            <p>Model: {{model}}</p>
-                            <p>Guitarists: {{guitarists}} </p>
-                        </div>
+            </div>
+            <div class='gallery-cell'>
+                <div class='carousel__item-body'>
+                    <div class='model'>
+                        <ThreeDModel />
+                    </div>
+                    <div id="guitarInfo">
+                        <p class='title'>Make:{{make}}</p>
+                        <p>Model: {{model}}</p>
+                        <p>Guitarists: {{guitarists}} </p>
+                    </div>
+                </div>
+            </div>
+            <div class='gallery-cell'>
+                <div class='carousel__item-body'>
+                    <div class='model'>
+                        <ThreeDModel />
+                    </div>
+                    <div id="guitarInfo">
+                        <p class='title'>Make:{{make}}</p>
+                        <p>Model: {{model}}</p>
+                        <p>Guitarists: {{guitarists}} </p>
+                    </div>
+                </div>
+            </div>
+            <div class='gallery-cell'>
+                <div class='carousel__item-body'>
+                    <div class='model'>
+                        <ThreeDModel />
+                    </div>
+                    <div id="guitarInfo">
+                        <p class='title'>Make:{{make}}</p>
+                        <p>Model: {{model}}</p>
+                        <p>Guitarists: {{guitarists}} </p>
+                    </div>
+                </div>
+            </div>
+            <div class='gallery-cell'>
+                <div class='carousel__item-body'>
+                    <div id="guitarImg" style="float:left;text-align:left;border:1px solid grey;width:100px;height:200px;">
+                        <img width=100 height=200
+                            src="https://upload.wikimedia.org/wikipedia/commons/6/63/Fender_Stratocaster_004-2.jpg" />
+                    </div>
+                    <div id="guitarInfo">
+                        <p class='title'>Make:{{make}}</p>
+                        <p>Model: {{model}}</p>
+                        <p>Guitarists: {{guitarists}} </p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </template>
-  
-  <script>
-  import ThreeDModel from './ThreeDModel.vue'
-  import axios from 'axios'
-  export default {
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script>
+import ThreeDModel from './ThreeDModel.vue'
+import axios from 'axios'
+export default {
     name: 'ResultsScreen',
     components: {
-      ThreeDModel
+        ThreeDModel
     },
-    props: ['type','media'],
-    data () {
+    props: ['type', 'media'],
+    data() {
         return {
             gotGuitars: false,
             currentInfo: {},
-            currentMedia: {"spotify":"https://open.spotify.com/embed/track/4vsoWZcvtvSsE0OiVvDDvX?si=e0c947796466427","youtube":"https://www.youtube.com/embed/Uz1Jwyxd4tE"}
+            currentMedia: { "spotify": "https://open.spotify.com/embed/track/4vsoWZcvtvSsE0OiVvDDvX?si=e0c947796466427", "youtube": "https://www.youtube.com/embed/Uz1Jwyxd4tE" }
         }
     },
-    mounted () {
+    mounted() {
         console.log("PROPS")
         console.log(this.type)
         console.log(this.media)
         console.log(this.$route.params)
-        this.data = { "type":this.type,"media":this.media}
-        axios.post("http://localhost:8000/api/media/",this.data)
-        .then((response) => {
-            this.info = response.data
-            console.log(this.info)
-            this.currentInfo = this.info[0]
-            this.gotGuitars = true
-        })
+        this.data = { "type": this.type, "media": this.media }
+        axios.post("http://localhost:8000/api/media/", this.data)
+            .then((response) => {
+                this.info = response.data
+                console.log(this.info)
+                this.currentInfo = this.info[0]
+                this.gotGuitars = true
+            })
     },
     methods: {
         goHome() {
-            this.$router.push({name:'videoscreen'})
+            this.$router.push({ name: 'videoscreen' })
         },
         changemyVar() {
-            this.myVar ="https://open.spotify.com/embed/track/1Ud6moTC0KyXMq1Oxfien0?si=c565fd4210664132"
+            this.myVar = "https://open.spotify.com/embed/track/1Ud6moTC0KyXMq1Oxfien0?si=c565fd4210664132"
         },
         change(string) {
-            if ( string == "youtube" ) {
+            if (string == "youtube") {
                 this.youtubeSelected = true
                 this.spotifySelected = false
             } else {
                 this.youtubeSelected = false
-                this.spotifySelected = true 
+                this.spotifySelected = true
             }
         }
     }
-  }
-  </script>
+}
+</script>
   
   <!-- Add "scoped" attribute to limit CSS to this component only -->
-  <style scoped>
-    #loading {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  opacity: 1;
-  background-color: #fff;
-  z-index: 99;
-  }
-  
+<style scoped>
+#loading {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    background-color: #fff;
+    z-index: 99;
+}
+
 #loading-image {
-  z-index: 100;
-  }
-  
-  
-  h3 {
+    z-index: 100;
+}
+
+
+h3 {
     margin: 40px 0 0;
-  }
+}
 
-  .model{
+.model {
     position: relative;
-    right:100px;
-    top:50px;
-  }
+    right: 100px;
+    top: 50px;
+}
 
-  .carousel {
+.carousel {
     position: relative;
     top: 350px;
     left: 300px;
@@ -121,8 +154,9 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-  }
-  .carousel__item {
+}
+
+.carousel__item {
     display: flex;
     align-items: center;
     position: absolute;
@@ -131,139 +165,166 @@
     opacity: 0;
     filter: drop-shadow(0 2px 2px #555);
     will-change: transform, opacity;
-    -webkit-animation: carousel-animate-vertical 45s linear infinite;
-            animation: carousel-animate-vertical 45s linear infinite;
-  }
-  
-  .carousel__item:nth-child(1) {
+    -webkit-animation: carousel-animate-vertical 50s linear infinite;
+    animation: carousel-animate-vertical 50s linear infinite;
+}
+
+.carousel__item:nth-child(1) {
     -webkit-animation-delay: calc(5s * -1);
-            animation-delay: calc(5s * -1);
-  }
-  
-  .carousel__item:nth-child(2) {
+    animation-delay: calc(5s * -1);
+}
+
+.carousel__item:nth-child(2) {
     -webkit-animation-delay: calc(5s * 0);
-            animation-delay: calc(5s * 0);
-  }
-  
-  .carousel__item:nth-child(3) {
-    -webkit-animation-delay: calc(5s * 1);
-            animation-delay: calc(5s * 1);
-  }
-  
-  .carousel__item:nth-child(4) {
+    animation-delay: calc(5s * 0);
+}
+
+.carousel__item:nth-child(3) {
     -webkit-animation-delay: calc(5s * 2);
-            animation-delay: calc(5s * 2);
-  }
-  
-  .carousel__item:nth-child(5) {
+    animation-delay: calc(5s * 2);
+}
+
+.carousel__item:nth-child(4) {
     -webkit-animation-delay: calc(5s * 3);
-            animation-delay: calc(5s * 3);
-  }
-  
-  .carousel__item:nth-child(6) {
-    -webkit-animation-delay: calc(5s * 4);
-            animation-delay: calc(5s * 4);
-  }
-  
-  .carousel__item:nth-child(7) {
-    -webkit-animation-delay: calc(5s * 5);
-            animation-delay: calc(5s * 5);
-  }
-  
-  .carousel__item:nth-child(8) {
-    -webkit-animation-delay: calc(5s * 6);
-            animation-delay: calc(5s * 6);
-  }
-  
-  .carousel__item:last-child {
+    animation-delay: calc(5s * 3);
+}
+
+.carousel__item:last-child {
     -webkit-animation-delay: calc(-5s * 2);
-            animation-delay: calc(-5s * 2);
-  }
-  
-  
-  .carousel__item-body {
+    animation-delay: calc(-5s * 2);
+}
+
+
+.carousel__item-body {
     width: 100%;
     background-color: #fff;
     border-radius: 8px;
     padding: 16px 20px 16px 70px;
     box-sizing: 100px;
-  }
-  
-  .title {
+}
+
+.title {
     text-transform: uppercase;
     font-size: 20px;
     margin-top: 10px;
-  }
-  
-  @-webkit-keyframes carousel-animate-vertical {
+}
+
+@-webkit-keyframes carousel-animate-vertical {
     0% {
-      transform: translateY(100%) scale(0.5);
-      opacity: 0;
-      visibility: hidden;
+        transform: translateY(100%) scale(0.5);
+        opacity: 0;
+        visibility: hidden;
     }
-    3%, 11.1111111111% {
-      transform: translateY(100%) scale(0.7);
-      opacity: 0.4;
-      visibility: visible;
+
+    3%,
+    11.1111111111% {
+        transform: translateY(100%) scale(0.7);
+        opacity: 0.4;
+        visibility: visible;
     }
-    14.1111111111%, 22.2222222222% {
-      transform: translateY(0) scale(1);
-      opacity: 1;
-      visibility: visible;
+
+    14.1111111111%,
+    22.2222222222% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+        visibility: visible;
     }
-    25.2222222222%, 33.3333333333% {
-      transform: translateY(-100%) scale(0.7);
-      opacity: 0.4;
-      visibility: visible;
+
+    25.2222222222%,
+    33.3333333333% {
+        transform: translateY(-100%) scale(0.7);
+        opacity: 0.4;
+        visibility: visible;
     }
+
     36.3333333333% {
-      transform: translateY(-100%) scale(0.5);
-      opacity: 0;
-      visibility: visible;
+        transform: translateY(-100%) scale(0.5);
+        opacity: 0;
+        visibility: visible;
     }
+
     100% {
-      transform: translateY(-100%) scale(0.5);
-      opacity: 0;
-      visibility: hidden;
+        transform: translateY(-100%) scale(0.5);
+        opacity: 0;
+        visibility: hidden;
     }
-  }
-  
-  @keyframes carousel-animate-vertical {
+}
+
+@keyframes carousel-animate-vertical {
     0% {
-      transform: translateY(100%) scale(0.5);
-      opacity: 0;
-      visibility: hidden;
+        transform: translateY(100%) scale(0.5);
+        opacity: 0;
+        visibility: hidden;
     }
-    3%, 11.1111111111% {
-      transform: translateY(100%) scale(0.7);
-      opacity: 0.4;
-      visibility: visible;
+
+    3%,
+    11.1111111111% {
+        transform: translateY(100%) scale(0.7);
+        opacity: 0.4;
+        visibility: visible;
     }
-    14.1111111111%, 22.2222222222% {
-      transform: translateY(0) scale(1);
-      opacity: 1;
-      visibility: visible;
+
+    14.1111111111%,
+    22.2222222222% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+        visibility: visible;
     }
-    25.2222222222%, 33.3333333333% {
-      transform: translateY(-100%) scale(0.7);
-      opacity: 0.4;
-      visibility: visible;
+
+    25.2222222222%,
+    33.3333333333% {
+        transform: translateY(-100%) scale(0.7);
+        opacity: 0.4;
+        visibility: visible;
     }
+
     36.3333333333% {
-      transform: translateY(-100%) scale(0.5);
-      opacity: 0;
-      visibility: visible;
+        transform: translateY(-100%) scale(0.5);
+        opacity: 0;
+        visibility: visible;
     }
+
     100% {
-      transform: translateY(-100%) scale(0.5);
-      opacity: 0;
-      visibility: hidden;
+        transform: translateY(-100%) scale(0.5);
+        opacity: 0;
+        visibility: hidden;
     }
-  }
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.gallery {
+    background: #EEE;
+}
+
+.gallery-cell {
+    width: 66%;
+    left:50px;
+    height: 200px;
+    margin-right: 10px;
+    background: #8C8;
+    counter-increment: gallery-cell;
+}
+
+.gallery-cell:before {
+    display: block;
+    text-align: center;
+    content: counter(gallery-cell);
+    line-height: 200px;
+    font-size: 80px;
+    color: white;
+}
 </style>
 
 
-/** <div id="social">
+<div id="social">
     <Spotify :uri="currentMedia.spotify"/>
     <YouTube :uri="currentMedia.youtube"/>
 </div> */
