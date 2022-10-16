@@ -30,6 +30,9 @@
   
   <!-- Add "scoped" attribute to limit CSS to this component only -->
   <style scoped>
+  model-viewer {
+    width:250px;height:250px;
+  }
   h3 {
     margin: 40px 0 0;
   }
