@@ -12,9 +12,10 @@
                         </div>
                         <div id="guitarInfo">
                           
-                            <p class='title'>Make:{{item.brandName}}</p>
-                            <p>Model: {{item.itemName}}</p>
-                           
+                            <p class='title'><b>Make:</b> {{item.brandName}}</p>
+                            <p><b>Model:</b> {{item.itemName}}</p>
+                            <p><b>Price: £</b>{{item.salesPrice}}</p>
+                            <p><b>Number in stock: </b>{{item.qtyInStock}}</p>
                         </div>                    
                     </div>
                 </div>
@@ -51,9 +52,7 @@
         axios.post("http://localhost:8000/api/media/",this.data)
         .then((response) => {
             this.info = response.data
-            for (var i=0; i< 5; i++) {
-              console.log(this.info[i].brandName)
-            }
+            
             this.isLoaded = true
             console.log(this.info)
             this.currentInfo = this.info[0]
